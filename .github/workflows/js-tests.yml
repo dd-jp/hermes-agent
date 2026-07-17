@@ -7,7 +7,7 @@ on:
 jobs:
   workspaces:
     name: List npm workspaces
-    runs-on: ubuntu-latest
+    runs-on: arc-runner-set
     outputs:
       packages: ${{ steps.set-matrix.outputs.packages }}
     steps:
@@ -31,7 +31,7 @@ jobs:
   check:
     name: Typecheck & Test
     needs: workspaces
-    runs-on: ubuntu-latest
+    runs-on: arc-runner-set
     strategy:
       matrix:
         package: ${{ fromJson(needs.workspaces.outputs.packages) }}

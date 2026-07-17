@@ -31,7 +31,7 @@ concurrency:
 jobs:
   diff:
     name: package-lock.json semantic diff
-    runs-on: ubuntu-latest
+    runs-on: arc-runner-set
     timeout-minutes: 5
     steps:
       - name: Checkout code
